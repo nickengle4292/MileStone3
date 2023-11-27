@@ -73,6 +73,14 @@ public class PairingTest {
         Response responseCorrectPassword = user1Client.sendRequest(loginRequestCorrectPassword, Response.class);
         System.out.println(gson.toJson(responseCorrectPassword));
 
+        // Register rest of the users
+        Request registerRequestUser2 = new Request(Request.RequestType.REGISTER, gson.toJson(user2));
+        user2Client.sendRequest(registerRequestUser2, Response.class);
+        Request registerRequestUser3 = new Request(Request.RequestType.REGISTER, gson.toJson(user3));
+        user2Client.sendRequest(registerRequestUser3, Response.class);
+        Request registerRequestUser4 = new Request(Request.RequestType.REGISTER, gson.toJson(user4));
+        user2Client.sendRequest(registerRequestUser4, Response.class);
+
         //Test5
         System.out.println("TEST 5");
         Request updatePairingRequestUser1 = new Request(Request.RequestType.UPDATE_PAIRING, null);
@@ -87,22 +95,19 @@ public class PairingTest {
 
         // Login user2 to the system by sending a LOGIN request.
         Request loginRequestUser2 = new Request(Request.RequestType.LOGIN, gson.toJson(user2));
-        Response loginResponseUser2 = user2Client.sendRequest(loginRequestUser2, Response.class);
-        System.out.println(gson.toJson(loginResponseUser2));
+        user2Client.sendRequest(loginRequestUser2, Response.class);
 
-// Test 7
-// Send a UPDATE_PAIRING request with user1. It should return PairingResponse with one available user (i.e., user2).
+        // Test 7
+        // Send a UPDATE_PAIRING request with user1. It should return PairingResponse with one available user (i.e., user2).
         System.out.println("TEST 7");
         PairingResponse pairingResponseUser1AfterLogin = user1Client.sendRequest(updatePairingRequestUser1, PairingResponse.class);
         System.out.println(gson.toJson(pairingResponseUser1AfterLogin));
 
-// Login the rest of the users by sending a LOGIN request with user3 and user4.
+        // Login the rest of the users by sending a LOGIN request with user3 and user4.
         Request loginRequestUser3 = new Request(Request.RequestType.LOGIN, gson.toJson(user3));
         Request loginRequestUser4 = new Request(Request.RequestType.LOGIN, gson.toJson(user4));
-        Response loginResponseUser3 = user3Client.sendRequest(loginRequestUser3, Response.class);
-        Response loginResponseUser4 = user4Client.sendRequest(loginRequestUser4, Response.class);
-        System.out.println(gson.toJson(loginResponseUser3));
-        System.out.println(gson.toJson(loginResponseUser4));
+        user3Client.sendRequest(loginRequestUser3, Response.class);
+        user4Client.sendRequest(loginRequestUser4, Response.class);
 
 
 // Test 8
