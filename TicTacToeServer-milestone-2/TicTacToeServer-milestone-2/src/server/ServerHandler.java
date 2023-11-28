@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * A class that helps SocketServer Handle individual user communication. This class extends {@link Thread}
  *
- * @author Ahmad Suleiman
+ * @author Nicholas Engle
  */
 public class ServerHandler extends Thread {
 

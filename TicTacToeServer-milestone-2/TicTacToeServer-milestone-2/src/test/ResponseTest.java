@@ -5,7 +5,7 @@ import socket.Response;
 /**
  * Test class for {@link Response}
  *
- * @author Ahmad Suleiman
+ * @author Nicholas Engle and Aidan Collins
  */
 public class ResponseTest {
 

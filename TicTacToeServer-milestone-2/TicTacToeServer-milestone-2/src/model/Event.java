@@ -3,7 +3,7 @@ package model;
 /**
  * Model class for a game event between two players in a TicTacToe game
  *
- * @author Ahmad Suleiman
+ * @author Nicholas Engle and Aidan Collins
  */
 public class Event {
 

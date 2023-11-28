@@ -5,7 +5,7 @@ import model.*;
 /**
  * Class for all request sent by the client to the server
  *
- * @author Ahmad Suleiman
+ * @author Nicholas Engle and Aidan Collins
  */
 public class Request {
 
